@@ -3,11 +3,11 @@ from  classifier import get_prediction
 
 app=Flask(__name__)
 
-@app.route('/predict-digit',methods=["POST"])
+@app.route('/predict-letters',methods=["POST"])
 
 
 def predict_data():
-    image=request.files.get("digit")
+    image=request.files.get("letters")
     prediction=get_prediction(image)
     return jsonify({
         'prediction':prediction
